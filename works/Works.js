@@ -2,30 +2,34 @@ import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { device } from './sizes';
 
-const Works = ({ english }) => {
+const Works = ({
+  english,
+  projectName,
+  description,
+  imgURL,
+  pageURL,
+  githubURL }) => {
   return (
     <>
       <GlobalStyles />
       <WorksContainer>
         <WorkArea>
-          <ProjectName>Project Name</ProjectName>
+          <ProjectName>{projectName}</ProjectName>
           <Description>
-            Amet amet aute consectetur incididunt commodo mollit aliqua dolore consectetur
-            esse. Sunt cillum anim dolore do ex nisi veniam. Incididunt commodo culpa in
-            incididunt cillum irure voluptate esse.In ea anim commodo eiusmod non. Nostrud ipsum sunt
+            {description}
           </Description>
         </WorkArea>
         <ImgArea>
-          <Img src={require('./images/AdminSitePick.png')} alt="Poietic" />
+          <Img src={imgURL} alt={projectName} />
         </ImgArea>
         <BtnsArea>
           <Button
-            href='https://poieticdemo.net'
+            href={pageURL}
             big={false}
           > {english ? 'Go to the Page' : 'Ir a la Página'}
           </Button>
           <Button
-            href='https://github.com/GabrielTurrillas?tab=repositories'
+            href={githubURL}
             big={false}
           > {english ? 'Go to the Code' : 'Ir al Código'}
           </Button>
