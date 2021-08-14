@@ -17,4 +17,5 @@ Default.args = {
   imgURL: AdminSitePick,
   pageURL: 'https://poieticdemo.net',
   githubURL: 'https://github.com/GabrielTurrillas?tab=repositories',
+  imgStart: false,
 };

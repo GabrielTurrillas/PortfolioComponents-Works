@@ -8,11 +8,12 @@ const Works = ({
   description,
   imgURL,
   pageURL,
-  githubURL }) => {
+  githubURL,
+  imgStart }) => {
   return (
     <>
       <GlobalStyles />
-      <WorksContainer>
+      <WorksContainer imgStart={imgStart}>
         <WorkArea>
           <ProjectName>{projectName}</ProjectName>
           <Description>
@@ -52,8 +53,7 @@ const BtnsArea = styled.div`
     flex-direction:row;
   }
   @media ${device.laptop} {
-    grid-column-start:1;
-    grid-column-end:3;
+    grid-area:buttons;
   }
 `
 
@@ -62,11 +62,10 @@ const ImgArea = styled.div`
   justify-content:center;
   align-items:center;
   @media ${device.laptop} {
-    grid-column-start:2;
-    grid-column-end:3;
+    grid-area:col2;
   }
-
-`
+  
+  `
 
 const WorkArea = styled.div`
   display: flex;
@@ -78,8 +77,8 @@ const WorkArea = styled.div`
     padding:2rem;
   }
   @media ${device.laptop} {
-    grid-column-start:1;
-    grid-column-end:2;
+    grid-area:col1;
+  }
 `
 
 const Img = styled.img`
@@ -146,12 +145,12 @@ const WorksContainer = styled.div`
   }
   @media ${device.laptop} {
     grid-template-columns:repeat(2, 1fr);
-    grid-template-rows:2fr 1fr
-  }
-  @media ${device.laptopL} {
-    padding:0 12rem;
+    grid-template-rows:2fr 1fr;
+    grid-template-areas: ${({ imgStart }) => (imgStart ? "'col2 col1' 'buttons buttons'" : "'col1 col2' 'buttons buttons'")}
   }
 `;
+
+
 
 const GlobalStyles = createGlobalStyle`
 * {
