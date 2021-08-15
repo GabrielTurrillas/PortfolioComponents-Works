@@ -6,6 +6,7 @@ const Works = ({
   english,
   projectName,
   description,
+  engDescription,
   imgURL,
   pageURL,
   githubURL,
@@ -17,7 +18,7 @@ const Works = ({
         <WorkArea>
           <ProjectName>{projectName}</ProjectName>
           <Description>
-            {description}
+            {english ? description : engDescription}
           </Description>
         </WorkArea>
         <ImgArea>
@@ -83,8 +84,8 @@ const WorkArea = styled.div`
 
 const Img = styled.img`
   border-radius:5px;
-  width: 80%;
-  height:auto;
+  max-width: 80%;
+  height: auto;
 `;
 
 
