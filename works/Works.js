@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { GlobalStyles } from '../styles/GlobalStyles';
-import { device } from './sizes';
+import { device } from '../styles/viewportsSizes';
 
 const Works = ({
   english,
