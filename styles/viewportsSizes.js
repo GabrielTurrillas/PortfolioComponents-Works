@@ -90,3 +90,4 @@ export const device = {
   laptopL: `(min-width: ${widthSizeSB.laptopL})`,
   desktop: `(min-width: ${widthSizeSB.desktop})`,
 };
+

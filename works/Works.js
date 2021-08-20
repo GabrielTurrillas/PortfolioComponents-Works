@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
+import { GlobalStyles } from '../styles/GlobalStyles';
 import { device } from './sizes';
 
 const Works = ({
@@ -44,84 +45,6 @@ const Works = ({
 export default Works
 
 
-const BtnsArea = styled.div`
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  padding:0 2rem;
-  @media ${device.tablet}{
-    flex-direction:row;
-  }
-  @media ${device.laptop} {
-    grid-area:buttons;
-  }
-`
-
-const ImgArea = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  @media ${device.laptop} {
-    grid-area:col2;
-  }
-  
-  `
-
-const WorkArea = styled.div`
-  display: flex;
-  text-align:center;
-  justify-content:center;
-  flex-direction:column;
-  padding:0 1rem;
-  @media ${device.tablet}{
-    padding:2rem;
-  }
-  @media ${device.laptop} {
-    grid-area:col1;
-  }
-`
-
-const Img = styled.img`
-  border-radius:5px;
-  max-width: 80%;
-  height: auto;
-`;
-
-
-const ProjectName = styled.h3`
-  height: fit-content;
-  padding:1rem;
-  `
-
-const Description = styled.article`
-  display:flex;
-  height: fit-content;
-`
-
-const Button = styled.a`
-  border-radius: 50px;
-  background: ${({ primary }) => (primary ? '#01BF71' : '#010606')};
-  white-space: nowrap;
-  padding: ${({ big }) => (big ? '14px 48px' : '12px 30px')};
-  color: ${({ dark }) => (dark ? '#010606' : '#fff')};
-  font-size: ${({ fontBig }) => (fontBig ? '20px' : '16px')};
-  outline: none;
-  border: solid;
-  border-color:#01BF71;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.2 ease-in-out;
-  text-decoration: none;
-  margin:1rem;
-  &:hover {
-    transition: all 0.2 ease-in-out;
-    background: ${({ primary }) => (primary ? '#fff' : '#01BF71')};
-  };
-`
-
 const WorksContainer = styled.div`
   color: #f7f8fa;
   background: #010606;
@@ -151,17 +74,83 @@ const WorksContainer = styled.div`
   }
 `;
 
-
-
-const GlobalStyles = createGlobalStyle`
-* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-} 
-#root {
-  margin:0 auto;
-}
+const WorkArea = styled.div`
+  display: flex;
+  text-align:center;
+  justify-content:center;
+  flex-direction:column;
+  padding:0 1rem;
+  @media ${device.tablet}{
+    padding:2rem;
+  }
+  @media ${device.laptop} {
+    grid-area:col1;
+  }
 `
+
+const ImgArea = styled.div`
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  @media ${device.laptop} {
+    grid-area:col2;
+  }
+`
+
+const BtnsArea = styled.div`
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:0 2rem;
+  @media ${device.tablet}{
+    flex-direction:row;
+  }
+  @media ${device.laptop} {
+    grid-area:buttons;
+  }
+`
+
+const ProjectName = styled.h3`
+  height: fit-content;
+  padding:1rem;
+`
+
+const Description = styled.article`
+  display:flex;
+  height: fit-content;
+`
+
+
+const Img = styled.img`
+  border-radius:5px;
+  max-width: 80%;
+  height: auto;
+`;
+
+
+const Button = styled.a`
+  border-radius: 50px;
+  background: ${({ primary }) => (primary ? '#01BF71' : '#010606')};
+  white-space: nowrap;
+  padding: ${({ big }) => (big ? '14px 48px' : '12px 30px')};
+  color: ${({ dark }) => (dark ? '#010606' : '#fff')};
+  font-size: ${({ fontBig }) => (fontBig ? '20px' : '16px')};
+  outline: none;
+  border: solid;
+  border-color:#01BF71;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2 ease-in-out;
+  text-decoration: none;
+  margin:1rem;
+  &:hover {
+    transition: all 0.2 ease-in-out;
+    background: ${({ primary }) => (primary ? '#fff' : '#01BF71')};
+  };
+`
+
+
+
